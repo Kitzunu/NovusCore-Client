@@ -1,0 +1,3 @@
+[submodule "NovusCore/NovusCore-Common"]
+	path = NovusCore/NovusCore-Common
+	url = https://github.com/novuscore/NovusCore-Common.git
