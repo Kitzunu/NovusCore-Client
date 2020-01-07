@@ -32,7 +32,6 @@ set(CMAKE_CXX_STANDARD 17)
 project(NovusCore-Client)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-set(ROOT_FOLDER ${PROJECT_NAME})
 set(COMMON_ROOT "NovusCore/NovusCore-Common")
 
 add_subdirectory(NovusCore/NovusCore-Common)
