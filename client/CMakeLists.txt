@@ -1,4 +1,5 @@
 project(client-demo VERSION 1.0.0 DESCRIPTION "Wow demo client for NovusCore")
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER})
 
 add_subdirectory(Dependencies)
 
@@ -8,10 +9,6 @@ add_executable(client-demo ${CLIENT_DEMO_FILES})
 find_assign_files(${CLIENT_DEMO_FILES})
 
 include_directories(../../dep/glfw/include)
-
-# Set VERSION & FOLDER Property
-set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER})
 
 add_compile_definitions(NOMINMAX _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
 

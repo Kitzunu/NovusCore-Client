@@ -1,4 +1,5 @@
 project(input VERSION 1.0.0 DESCRIPTION "Input Library")
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
 
 file(GLOB_RECURSE INPUT_LIB_FILES "*.cpp" "*.h")
 
@@ -14,7 +15,3 @@ target_link_libraries(input PUBLIC
 )
 
 add_compile_definitions(NOMINMAX _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
-
-# Set VERSION & FOLDER Property
-set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)

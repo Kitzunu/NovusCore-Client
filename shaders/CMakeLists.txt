@@ -1,4 +1,6 @@
 project(shaders VERSION 1.0.0 DESCRIPTION "Shaders for NovusCore")
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
+
 set(SHADER_OUTPUT ${CMAKE_INSTALL_PREFIX}/shaders CACHE PATH "Output Directory for shaders")
 
 if (${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "AMD64")
@@ -29,5 +31,3 @@ add_custom_target(${PROJECT_NAME}
     SOURCES ${GLSL_SOURCE_FILES}
     )
     
-set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)

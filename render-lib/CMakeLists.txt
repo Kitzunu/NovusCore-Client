@@ -1,4 +1,5 @@
 project(render VERSION 1.0.0 DESCRIPTION "Render Library")
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
 
 find_package(Vulkan REQUIRED)
 file(GLOB_RECURSE RENDER_LIB_FILES "*.cpp" "*.h")
@@ -28,7 +29,3 @@ add_custom_command(TARGET render POST_BUILD
         )
 
 add_compile_definitions(NOMINMAX _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS VK_USE_PLATFORM_WIN32_KHR)
-
-# Set VERSION & FOLDER Property
-set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
