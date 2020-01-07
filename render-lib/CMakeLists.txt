@@ -30,5 +30,5 @@ add_custom_command(TARGET render POST_BUILD
 add_compile_definitions(NOMINMAX _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS VK_USE_PLATFORM_WIN32_KHR)
 
 # Set VERSION & FOLDER Property
-set_target_properties(render PROPERTIES VERSION ${PROJECT_VERSION})
-set_target_properties(render PROPERTIES FOLDER "libs")
+set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)

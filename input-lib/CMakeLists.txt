@@ -16,5 +16,5 @@ target_link_libraries(input PUBLIC
 add_compile_definitions(NOMINMAX _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
 
 # Set VERSION & FOLDER Property
-set_target_properties(input PROPERTIES VERSION ${PROJECT_VERSION})
-set_target_properties(input PROPERTIES FOLDER "libs")
+set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)

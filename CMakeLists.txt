@@ -20,6 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+project(NovusCore-Client)
+
 # CMake >= 3.12
 cmake_minimum_required(VERSION 3.12)
 
@@ -27,12 +29,12 @@ cmake_minimum_required(VERSION 3.12)
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
 set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 set(CMAKE_CONFIGURATION_TYPES Debug Release RelWithDebInfo CACHE STRING "" FORCE)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules;${CMAKE_SOURCE_DIR}/NovusCore/NovusCore-Common/cmake/modules")
+set(COMMON_ROOT "NovusCore/NovusCore-Common")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules;${CMAKE_CURRENT_SOURCE_DIR}/${COMMON_ROOT}/cmake/modules")
 set(CMAKE_CXX_STANDARD 17)
-project(NovusCore-Client)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-set(COMMON_ROOT "NovusCore/NovusCore-Common")
+set(ROOT_FOLDER ${PROJECT_NAME})
 
 add_subdirectory(NovusCore/NovusCore-Common)
 include(${COMMON_ROOT}/cmake/Configuration.cmake)
