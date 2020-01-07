@@ -1,11 +1,11 @@
 project(render VERSION 1.0.0 DESCRIPTION "Render Library")
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
 
 find_package(Vulkan REQUIRED)
 file(GLOB_RECURSE RENDER_LIB_FILES "*.cpp" "*.h")
 
 add_library(render ${RENDER_LIB_FILES})
 add_library(render::render ALIAS render)
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
 
 find_assign_files(${RENDER_LIB_FILES})
 

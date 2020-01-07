@@ -1,10 +1,10 @@
 project(input VERSION 1.0.0 DESCRIPTION "Input Library")
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
 
 file(GLOB_RECURSE INPUT_LIB_FILES "*.cpp" "*.h")
 
 add_library(input ${INPUT_LIB_FILES})
 add_library(input::input ALIAS input)
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
 
 find_assign_files(${INPUT_LIB_FILES})
 

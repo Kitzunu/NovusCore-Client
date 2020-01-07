@@ -1,5 +1,4 @@
 project(shaders VERSION 1.0.0 DESCRIPTION "Shaders for NovusCore")
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
 
 set(SHADER_OUTPUT ${CMAKE_INSTALL_PREFIX}/shaders CACHE PATH "Output Directory for shaders")
 
@@ -30,4 +29,5 @@ add_custom_target(${PROJECT_NAME}
     DEPENDS ${SPIRV_BINARY_FILES}
     SOURCES ${GLSL_SOURCE_FILES}
     )
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ${ROOT_FOLDER}/libs)
     
