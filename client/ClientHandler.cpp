@@ -1,5 +1,4 @@
 #include "ClientHandler.h"
-#include <Networking/MessageHandler.h>
 #include <Networking/InputQueue.h>
 #include "Window.h"
 #include "Camera.h"
@@ -27,7 +26,6 @@ void ClientHandler::Start()
 
     // Setup Network Lib
     InputQueue::SetInputQueue(&_inputQueue);
-    MessageHandler::Create();
 
     std::thread thread = std::thread(&ClientHandler::Run, this);
     thread.detach();
