@@ -20,4 +20,4 @@ target_link_libraries(client-demo PRIVATE
 	glfw ${GLFW_LIBRARIES}
 )
 
-install(TARGETS client-demo DESTINATION bin)
+install(TARGETS client-demo DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

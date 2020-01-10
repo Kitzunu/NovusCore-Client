@@ -22,10 +22,10 @@ add_dependencies(render shaders)
 
 add_custom_command(TARGET render POST_BUILD
 	COMMENT "Compiling shaders..."
-	COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_INSTALL_PREFIX}/$<CONFIG>/shaders/"
+	COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>/shaders/"
     COMMAND ${CMAKE_COMMAND} -E copy_directory
         "${SHADER_OUTPUT}"
-        "${CMAKE_INSTALL_PREFIX}/$<CONFIG>/shaders/"
+        "${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>/shaders/"
         )
 
 add_compile_definitions(NOMINMAX _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS VK_USE_PLATFORM_WIN32_KHR)
